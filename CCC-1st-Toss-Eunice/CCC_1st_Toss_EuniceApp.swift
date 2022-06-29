@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// swiftlint: disable type_name
 @main
 struct CCC_1st_Toss_EuniceApp: App {
     var body: some Scene {
@@ -15,3 +16,4 @@ struct CCC_1st_Toss_EuniceApp: App {
         }
     }
 }
+// swiftlint: enable type_name
