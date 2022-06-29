@@ -11,6 +11,7 @@
 		C5158204286C2A4E0011A308 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5158203286C2A4E0011A308 /* ContentView.swift */; };
 		C5158206286C2A4F0011A308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5158205286C2A4F0011A308 /* Assets.xcassets */; };
 		C5158209286C2A4F0011A308 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5158208286C2A4F0011A308 /* Preview Assets.xcassets */; };
+		C5158210286C2D580011A308 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C515820F286C2D580011A308 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C5158203286C2A4E0011A308 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C5158205286C2A4F0011A308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5158208286C2A4F0011A308 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C515820F286C2D580011A308 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				C5158203286C2A4E0011A308 /* ContentView.swift */,
 				C5158205286C2A4F0011A308 /* Assets.xcassets */,
 				C5158207286C2A4F0011A308 /* Preview Content */,
+				C515820F286C2D580011A308 /* TestView.swift */,
 			);
 			path = "CCC-1st-Toss-Eunice";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5158210286C2D580011A308 /* TestView.swift in Sources */,
 				C5158204286C2A4E0011A308 /* ContentView.swift in Sources */,
 				C5158202286C2A4E0011A308 /* CCC_1st_Toss_EuniceApp.swift in Sources */,
 			);
