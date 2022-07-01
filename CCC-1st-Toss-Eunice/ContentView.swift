@@ -9,11 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isNotifExist: Bool = false
-    
+
     var body: some View {
         NavigationView {
             TabView {
-                customeTabBarBackground(content: HomeView())
+                customeTabBarBackground(content:
+                                            HomeView())
+                                            //TrackableScrollViewContainer(content: HomeView()))
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("홈")

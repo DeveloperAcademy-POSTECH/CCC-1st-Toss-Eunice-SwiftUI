@@ -84,7 +84,6 @@ struct SharedUI_Previews: PreviewProvider {
                 ListHeader()
                     .background(BGBox())
                     .padding()
-                
                 VStack {
                     ListHeader()
                     ListItem()
@@ -92,7 +91,7 @@ struct SharedUI_Previews: PreviewProvider {
                 }
                 .background(BGBox())
                 .padding()
-                ScrollView(.horizontal){
+                ScrollView(.horizontal) {
                     HStack {
                         CardView()
                         CardView()

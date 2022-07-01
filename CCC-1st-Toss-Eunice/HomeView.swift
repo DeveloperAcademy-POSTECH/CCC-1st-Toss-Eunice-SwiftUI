@@ -9,72 +9,81 @@ import SwiftUI
 
 struct HomeView: View {
     @State var isClipboardExist: Bool = false
-    
+    @State var moveFlag: Bool = true
+
+    @State var contentOffset = CGFloat(0)
+
     var body: some View {
-            ScrollView {
-                // 바꿀 예정
-                LazyVStack(pinnedViews: .sectionFooters) {
+        TrackableScrollView(
+            offsetChanged: { offset in
+                contentOffset = offset.y
+                print("co: \(String(describing: contentOffset))")
+            }
+        ) {
+            LazyVStack {
+                ListHeader()
+                    .background(BGBox())
+                    .padding(.horizontal)
+                VStack {
                     ListHeader()
                         .background(BGBox())
-                        .padding(.horizontal)
-                    Section(
-                        footer: ListHeader()
-                            .background(BGBox())
-                            .padding(.horizontal)
-                            .scaleEffect(1.1)
-                            .animation(.default)
-                    ) {
-                        VStack {
-                            ListHeader()
-                                .background(BGBox())
-                            ForEach(0...2, id: \.self){ idx in
-                                ListItem()
-                            }
-                            Divider()
-                                .padding()
-                            ForEach(3...4, id: \.self){ idx in
-                                ListItem()
-                            }
-                        }
-                        .background(BGBox())
-                        .padding(.horizontal)
+                    ForEach(0...2, id: \.self) { _ in
+                        ListItem()
                     }
-                    Section {
-                        VStack {
-                            ListItem()
-                            Divider()
-                                .padding()
-                            ListItem()
-                        }
-                        .background(BGBox())
-                        .padding(.horizontal)
-                    }
-                }
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(0...3, id: \.self) { _ in
-                            CardView()
-                                .frame(width: UIScreen.main.bounds.width * 0.4)
-                        }
-                    }
-                }
-                .padding(.horizontal)
-                HStack {
-                    Button("금액 숨기기", action: {})
-                        .foregroundColor(Color(uiColor: .systemGray))
                     Divider()
-                    Button("자산 추가", action: {})
-                        .foregroundColor(Color(uiColor: .systemGray))
+                        .padding()
+                    ForEach(3...4, id: \.self) { _ in
+                        ListItem()
+                    }
                 }
-                .padding()
-                .padding(.bottom)
+                .background(BGBox())
+                .padding(.horizontal)
+
+                VStack {
+                    ListHeader()
+                        .background(BGBox())
+                    ListItem()
+                    Divider()
+                        .padding()
+                    ListItem()
+                }
+                .background(BGBox())
+                .scaleEffect(1.1)
+                .animation(.default, value: moveFlag)
+                .padding(.horizontal)
             }
-            .background(
-                Color(uiColor: .systemGray6
-                    .withAlphaComponent(0.8)
-                )
-                .ignoresSafeArea()
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(0...3, id: \.self) { _ in
+                        CardView()
+                            .frame(width: UIScreen.main.bounds.width * 0.4)
+                    }
+                }
+            }
+            .padding(.horizontal)
+            HStack {
+                Button("금액 숨기기", action: {})
+                    .foregroundColor(Color(uiColor: .systemGray))
+                Divider()
+                Button("자산 추가", action: {})
+                    .foregroundColor(Color(uiColor: .systemGray))
+            }
+            .padding()
+            .padding(.bottom)
+        }
+        .background(
+//            Color(uiColor: .systemGray6
+//                .withAlphaComponent(0.8)
+//            )
+            Color.pink.opacity(
+                contentOffset < -15 ? 0 : 1
             )
+            .onAppear {
+                print("contentOffset: \(contentOffset)")
+            }
+
+            .ignoresSafeArea()
+        )
     }
 }
 
