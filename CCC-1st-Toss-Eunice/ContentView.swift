@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isNotifExist: Bool = false
-    
+
     var body: some View {
         NavigationView {
             TabView {
